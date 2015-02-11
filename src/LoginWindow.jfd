@@ -1,0 +1,103 @@
+JFDML JFormDesigner: "5.1.2.0.134" Java: "1.7.0_40" encoding: "UTF-8"
+
+new FormModel {
+	contentType: "form/swing"
+	root: new FormRoot {
+		add( new FormWindow( "javax.swing.JFrame", new FormLayoutManager( class java.awt.BorderLayout ) ) {
+			name: "this"
+			"$sizePolicy": 1
+			"title": "QPrint"
+			"resizable": false
+			add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.BorderLayout ) {
+				"vgap": 5
+			} ) {
+				name: "dialogPane"
+				"border": new javax.swing.border.EmptyBorder( 12, 12, 12, 12 )
+				add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.GridLayout ) {
+					"columns": 1
+					"rows": 3
+					"hgap": 6
+					"vgap": 4
+				} ) {
+					name: "contentPanel"
+					"preferredSize": new java.awt.Dimension( 80, 79 )
+					"minimumSize": new java.awt.Dimension( 80, 79 )
+					"maximumSize": new java.awt.Dimension( 80, 80 )
+					"border": new javax.swing.border.LineBorder( sfield java.awt.Color lightGray, 1, true )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"hgap": 27
+					} ) {
+						name: "panel1"
+						"border": sfield com.jformdesigner.model.FormObject NULL_VALUE
+						"maximumSize": new java.awt.Dimension( 171, 30 )
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label1"
+							"text": "Логин"
+							"horizontalAlignment": 0
+							"alignmentY": 4.5f
+							"preferredSize": new java.awt.Dimension( 37, 14 )
+							"maximumSize": new java.awt.Dimension( 37, 14 )
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "loginTextField"
+							"alignmentY": 4.5f
+							"columns": 18
+							"minimumSize": new java.awt.Dimension( 60, 20 )
+							"horizontalAlignment": 0
+							"maximumSize": new java.awt.Dimension( 60, 20 )
+							"autoscrolls": false
+							"verifyInputWhenFocusTarget": false
+							"text": "bank_printer"
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"alignOnBaseline": true
+						"hgap": 9
+					} ) {
+						name: "panel2"
+						add( new FormComponent( "javax.swing.JLabel" ) {
+							name: "label2"
+							"text": "Пароль"
+							"horizontalAlignment": 0
+							"alignmentY": 4.5f
+						} )
+						add( new FormComponent( "javax.swing.JTextField" ) {
+							name: "passwordTextField"
+							"alignmentY": 4.5f
+							"minimumSize": new java.awt.Dimension( 60, 20 )
+							"columns": 18
+							"horizontalAlignment": 0
+							"text": "bank_printer_qprint"
+						} )
+					} )
+					add( new FormContainer( "javax.swing.JPanel", new FormLayoutManager( class java.awt.FlowLayout ) {
+						"alignOnBaseline": true
+					} ) {
+						name: "panel3"
+						add( new FormComponent( "javax.swing.JButton" ) {
+							name: "loginButton"
+							"text": "Войти"
+							"alignmentY": 4.5f
+							"font": new com.jformdesigner.model.SwingDerivedFont( null, 196608, 3, false )
+						} )
+					} )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "Center"
+				} )
+				add( new FormComponent( "javax.swing.JLabel" ) {
+					name: "label3"
+					"text": "Пройдите авторизацию."
+					"horizontalAlignment": 0
+					"font": new java.awt.Font( "Tahoma", 1, 13 )
+				}, new FormLayoutConstraints( class java.lang.String ) {
+					"value": "North"
+				} )
+			}, new FormLayoutConstraints( class java.lang.String ) {
+				"value": "Center"
+			} )
+		}, new FormLayoutConstraints( null ) {
+			"location": new java.awt.Point( 0, 0 )
+			"size": new java.awt.Dimension( 225, 240 )
+		} )
+	}
+}

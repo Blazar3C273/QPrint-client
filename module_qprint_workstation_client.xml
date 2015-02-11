@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="module_qprint_workstation_client" default="compile.module.qprint_workstation_client">
+  <dirname property="module.qprint_workstation_client.basedir" file="${ant.file.module_qprint_workstation_client}"/>
+  
+  <property name="module.jdk.home.qprint_workstation_client" value="${project.jdk.home}"/>
+  <property name="module.jdk.bin.qprint_workstation_client" value="${project.jdk.bin}"/>
+  <property name="module.jdk.classpath.qprint_workstation_client" value="${project.jdk.classpath}"/>
+  
+  <property name="compiler.args.qprint_workstation_client" value="-encoding UTF-8 -source 1.7 ${compiler.args}"/>
+  
+  <property name="qprint_workstation_client.output.dir" value="${module.qprint_workstation_client.basedir}/out/production/QPrint Workstation client"/>
+  <property name="qprint_workstation_client.testoutput.dir" value="${module.qprint_workstation_client.basedir}/out/test/QPrint Workstation client"/>
+  
+  <path id="qprint_workstation_client.module.bootclasspath">
+    <!-- Paths to be included in compilation bootclasspath -->
+  </path>
+  
+  <path id="qprint_workstation_client.module.production.classpath">
+    <path refid="${module.jdk.classpath.qprint_workstation_client}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+  </path>
+  
+  <path id="qprint_workstation_client.runtime.production.module.classpath">
+    <pathelement location="${qprint_workstation_client.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+  </path>
+  
+  <path id="qprint_workstation_client.module.classpath">
+    <path refid="${module.jdk.classpath.qprint_workstation_client}"/>
+    <pathelement location="${qprint_workstation_client.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+  </path>
+  
+  <path id="qprint_workstation_client.runtime.module.classpath">
+    <pathelement location="${qprint_workstation_client.testoutput.dir}"/>
+    <pathelement location="${qprint_workstation_client.output.dir}"/>
+    <path refid="library.lib.classpath"/>
+    <path refid="library.json-simple-1.1.1.classpath"/>
+  </path>
+  
+  
+  <patternset id="excluded.from.module.qprint_workstation_client">
+    <patternset refid="ignored.files"/>
+  </patternset>
+  
+  <patternset id="excluded.from.compilation.qprint_workstation_client">
+    <patternset refid="excluded.from.module.qprint_workstation_client"/>
+  </patternset>
+  
+  <path id="qprint_workstation_client.module.sourcepath">
+    <dirset dir="${module.qprint_workstation_client.basedir}">
+      <include name="src"/>
+    </dirset>
+  </path>
+  
+  
+  <target name="compile.module.qprint_workstation_client" depends="compile.module.qprint_workstation_client.production,compile.module.qprint_workstation_client.tests" description="Compile module QPrint Workstation client"/>
+  
+  <target name="compile.module.qprint_workstation_client.production" depends="register.custom.compilers" description="Compile module QPrint Workstation client; production classes">
+    <mkdir dir="${qprint_workstation_client.output.dir}"/>
+    <javac2 destdir="${qprint_workstation_client.output.dir}" debug="${compiler.debug}" nowarn="${compiler.generate.no.warnings}" memorymaximumsize="${compiler.max.memory}" fork="true" executable="${module.jdk.bin.qprint_workstation_client}/javac">
+      <compilerarg line="${compiler.args.qprint_workstation_client}"/>
+      <bootclasspath refid="qprint_workstation_client.module.bootclasspath"/>
+      <classpath refid="qprint_workstation_client.module.production.classpath"/>
+      <src refid="qprint_workstation_client.module.sourcepath"/>
+      <patternset refid="excluded.from.compilation.qprint_workstation_client"/>
+    </javac2>
+    
+    <copy todir="${qprint_workstation_client.output.dir}">
+      <fileset dir="${module.qprint_workstation_client.basedir}/src">
+        <patternset refid="compiler.resources"/>
+        <type type="file"/>
+      </fileset>
+    </copy>
+  </target>
+  
+  <target name="compile.module.qprint_workstation_client.tests" depends="register.custom.compilers,compile.module.qprint_workstation_client.production" description="compile module QPrint Workstation client; test classes" unless="skip.tests"/>
+  
+  <target name="clean.module.qprint_workstation_client" description="cleanup module">
+    <delete dir="${qprint_workstation_client.output.dir}"/>
+    <delete dir="${qprint_workstation_client.testoutput.dir}"/>
+  </target>
+</project>

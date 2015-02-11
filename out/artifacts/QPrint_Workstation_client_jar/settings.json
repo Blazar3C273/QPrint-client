@@ -1,0 +1,9 @@
+{
+  "server_address" :"http://10.10.131.81:8050/",
+  "proxy_host" :"10.10.131.121",
+  "proxy_port" :"3128",
+  "use_proxy" :"false",
+  "default_login" :"vertol",
+  "default_password" :"vertol1337",
+   "pdf_printer_exe_path":"\"C:\\Program Files\\Bullzip\\PDF Printer\\pdfcmd.exe\""
+ }
